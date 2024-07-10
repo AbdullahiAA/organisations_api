@@ -26,7 +26,7 @@ app.all("*", (req: Request, res: Response) => {
 const PORT = process.env.PORT || 5050;
 
 sequelize.sync().then(() => {
-  app.listen(PORT, () => {
+  app.listen(Number(PORT), "0.0.0.0", () => {
     console.log(`Server is running on port ${PORT}`);
   });
 });
