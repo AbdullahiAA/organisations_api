@@ -1,0 +1,24 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const sequelize_1 = require("sequelize");
+const index_1 = __importDefault(require("../database/index"));
+class UserOrganisation extends sequelize_1.Model {
+}
+UserOrganisation.init({
+    userId: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
+    },
+    orgId: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
+    },
+}, {
+    sequelize: index_1.default,
+    modelName: "UserOrganisation",
+});
+UserOrganisation.removeAttribute("id");
+exports.default = UserOrganisation;
