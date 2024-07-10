@@ -15,6 +15,10 @@ app.use("/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/organisations", organisationRoutes);
 
+app.get("/", (req: Request, res: Response) => {
+res.status(200).send("Successful");
+})
+
 app.all("*", (req: Request, res: Response) => {
   res.status(404).json({
     status: "Not Found",
