@@ -27,7 +27,7 @@ app.all("*", (req: Request, res: Response) => {
   });
 });
 
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 5432;
 
 sequelize.sync().then(() => {
   app.listen(Number(PORT), "0.0.0.0", () => {
