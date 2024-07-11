@@ -26,7 +26,7 @@ app.all("*", (req, res) => {
         statusCode: 404,
     });
 });
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 5431;
 database_1.default.sync().then(() => {
     app.listen(Number(PORT), "0.0.0.0", () => {
         console.log(`Server is running on port ${PORT}`);
